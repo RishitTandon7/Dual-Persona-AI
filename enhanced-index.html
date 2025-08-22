@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Shopping Assistant - Multi-Platform</title>
+    <link rel="stylesheet" href="modern-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Shopping Assistant</h1>
+            <p>Get personalized product recommendations across Amazon, Flipkart, and Myntra</p>
+        </div>
+
+        <div class="main-layout">
+            <!-- Chat Interface -->
+            <div class="chat-interface">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot-message">
+                        <div class="message-content">
+                            <div class="message-header">
+                                <span class="persona-name">AI Assistant</span>
+                                <span class="timestamp">Just now</span>
+                            </div>
+                            <p>Welcome to your personal shopping assistant! I'll help you find the perfect products across multiple platforms. What type of product are you looking for?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chat-input">
+                    <input type="text" id="search-input" placeholder="What product are you looking for? (e.g., laptop, shirt, book)" autocomplete="off">
+                    <button id="search-btn" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="products-display hidden" id="products-display">
+                <div class="platform-filter" id="platform-filter">
+                    <button class="platform-btn active" data-platform="all">
+                        <i class="fas fa-globe"></i> All Platforms
+                    </button>
+                    <button class="platform-btn" data-platform="Amazon">
+                        <i class="fas fa-shopping-cart"></i> Amazon
+                    </button>
+                    <button class="platform-btn" data-platform="Flipkart">
+                        <i class="fas fa-store"></i> Flipkart
+                    </button>
+                    <button class="platform-btn" data-platform="Myntra">
+                        <i class="fas fa-tshirt"></i> Myntra
+                    </button>
+                </div>
+
+                <div class="loading hidden" id="loading">
+                    <div class="typing-indicator">
+                        <i class="fas fa-spinner fa-spin"></i>
+                        <span>Searching products across platforms...</span>
+                    </div>
+                </div>
+
+                <div class="error-message hidden" id="error-message">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span id="error-text"></span>
+                </div>
+
+                <div class="product-grid" id="products-grid">
+                    <!-- Products will be displayed here -->
+                </div>
+
+                <div class="persona-debate hidden mt-6" id="persona-debate">
+                    <!-- Persona debate will be displayed here -->
+                </div>
+
+                <div class="final-recommendation hidden mt-6" id="final-recommendation">
+                    <!-- Final recommendation will be displayed here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Question Flow Section (Initially Hidden) -->
+        <div class="card question-flow hidden" id="question-flow">
+            <div class="question-text" id="current-question">
+                Loading questions...
+            </div>
+            
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+            </div>
+            
+            <div class="options-grid" id="options-container">
+                <!-- Options will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
