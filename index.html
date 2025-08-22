@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Shopping Assistant - Amazon India</title>
+    <link rel="stylesheet" href="enhanced-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1><i class="fas fa-robot"></i> AI Shopping Assistant</h1>
+            <p>Get personalized Amazon India recommendations from our expert AI personas</p>
+        </header>
+
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="persona-info">
+                    <div class="persona premiummax">
+                        <i class="fas fa-crown"></i>
+                        <span>PremiumMax</span>
+                    </div>
+                    <div class="vs">VS</div>
+                    <div class="persona budgetbalance">
+                        <i class="fas fa-wallet"></i>
+                        <span>BudgetBalance</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="avatar premiummax">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-header">
+                            <span class="persona-name">PremiumMax</span>
+                            <span class="timestamp">Just now</span>
+                        </div>
+                        <p>Hello! I'm PremiumMax, your high-end shopping expert. I'll help you find the best quality products with top ratings! 👑</p>
+                    </div>
+                </div>
+
+                <div class="message bot-message">
+                    <div class="avatar budgetbalance">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-header">
+                            <span class="persona-name">BudgetBalance</span>
+                            <span class="timestamp">Just now</span>
+                        </div>
+                        <p>And I'm BudgetBalance! I'll make sure you get the best deals and save money without compromising too much on quality! 💰</p>
+                    </div>
+                </div>
+
+                <div class="message bot-message">
+                    <div class="avatar system">
+                        <i class="fas fa-info-circle"></i>
+                    </div>
+                    <div class="message-content">
+                        <div class="message-header">
+                            <span class="persona-name">System</span>
+                            <span class="timestamp">Just now</span>
+                        </div>
+                        <p>Together, we'll help you find the perfect product on Amazon India. What would you like to search for?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-section">
+                    <input type="text" id="search-input" placeholder="What product are you looking for on Amazon India?" autocomplete="off">
+                    <select id="preference-select">
+                        <option value="neutral">🤔 I'm neutral</option>
+                        <option value="premium">👑 I prefer premium quality</option>
+                        <option value="budget">💰 I prefer budget options</option>
+                    </select>
+                    <button id="search-btn" class="btn btn-primary">
+                        <i class="fas fa-search"></i> Search
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section hidden" id="results-section">
+            <div class="results-header">
+                <h3>Search Results</h3>
+                <button id="new-search-btn" class="btn btn-secondary">
+                    <i class="fas fa-redo"></i> New Search
+                </button>
+            </div>
+            
+            <div class="loading hidden" id="loading">
+                <i class="fas fa-spinner fa-spin"></i>
+                <span>Searching Amazon India...</span>
+            </div>
+
+            <div class="error-message hidden" id="error-message">
+                <i class="fas fa-exclamation-triangle"></i>
+                <span id="error-text"></span>
+            </div>
+
+            <div class="products-grid" id="products-grid">
+                <!-- Products will be displayed here -->
+            </div>
+
+            <div class="persona-debate" id="persona-debate">
+                <!-- Persona debate will be displayed here -->
+            </div>
+
+            <div class="final-recommendation" id="final-recommendation">
+                <!-- Final recommendation will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
