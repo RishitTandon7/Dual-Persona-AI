@@ -108,3 +108,4 @@ if __name__ == '__main__':
     print("🤖 Starting AI Shopping Assistant Server...")
     app.run(debug=True, host='0.0.0.0', port=5000)
     print(f"📦 Webscraper available: {WEBSCRAPER_AVAILABLE}")
+
